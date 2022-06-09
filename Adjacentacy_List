@@ -28,6 +28,7 @@ int main() {
         // }
        
        //below will take O(N) for worst case , where N: no. of vertices 
+       //for finding where vertex 5 and 2 are connected or not , if yes then print its weight
         for(pair<int,int> child:graph[5]){
             if(child.first==2){
                 cout<<child.second;
