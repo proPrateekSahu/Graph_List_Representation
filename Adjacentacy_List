@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+const int N=1e3+10;
+
+
+vector<pair<int,int>> graph[N];
+//vector<int> graph[N];
+int main() {
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n,y;
+        cin>>n>>y;
+       // below commented part for undirected weighted graph
+        for(int i=1;i<=y;i++){
+            ll a,b,wt;
+            cin>>a>>b>>wt;
+            graph[a].push_back({b,wt});
+            graph[b].push_back({a,wt});
+        }
+        // for(int i=1;i<=y;i++){
+        //     //for unweighted undirected graph
+        //     ll a,b;
+        //     cin>>a>>b;
+        //     graph[a].push_back(b);
+        //     graph[b].push_back(a);
+        // }
+       
+       //below will take O(N) for worst case , where N: no. of vertices 
+        for(pair<int,int> child:graph[5]){
+            if(child.first==2){
+                cout<<child.second;
+            }
+        }
+
+
+    }
+    
+    
+	// your code goes here
+	return 0;
+}
